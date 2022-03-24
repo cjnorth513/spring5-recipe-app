@@ -1,3 +1,11 @@
+create table category
+(
+    description varchar(255) not null
+);
+create table unit_of_measure
+(
+    description varchar(255) not null
+);
 INSERT INTO category (description) VALUES ('American');
 INSERT INTO category (description) VALUES ('Italian');
 INSERT INTO category (description) VALUES ('Mexican');
