@@ -136,6 +136,7 @@ public class RecipeBootstrap implements ApplicationListener<ContextRefreshedEven
 //      needed for bidirectional - should be one method call
         guacNotes.setRecipe(guacRecipe);
         guacRecipe.setNotes(guacNotes);
+        guacRecipe.setUrl("https://www.simplyrecipes.com/search?q=perfect+guacamole");
 
         guacRecipe.getIngredients().add(new Ingredient("ripe avocados", new BigDecimal(2), eachUom, guacRecipe));
         guacRecipe.getIngredients().add(new Ingredient("Kosher salt", new BigDecimal(".5"), teapoonUom, guacRecipe));
