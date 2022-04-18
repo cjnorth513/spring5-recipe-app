@@ -1,10 +1,12 @@
 package guru.springframework.services;
 
+import guru.springframework.commands.RecipeCommand;
 import guru.springframework.domain.Recipe;
 import guru.springframework.repositories.RecipeRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -32,9 +34,26 @@ public class RecipeServiceImpl implements RecipeService{
     public Recipe findById(Long L){
         Optional<Recipe> recipeOptional = recipeRepository.findById(L);
         if (!recipeOptional.isPresent()) {
-            throw new RuntimeException("Recipe Not Found");
+            throw new RuntimeException("Recipe Not Found for ID value" + L.toString());
         }
 
         return recipeOptional.get();
+    }
+
+    @Override
+    @Transactional
+    public RecipeCommand saveRecipeCommand(RecipeCommand command) {
+        return null;
+    }
+
+    @Override
+    @Transactional
+    public RecipeCommand findCommandById(Long id) {
+        return null;
+    }
+
+    @Override
+    public void deleteById(Long idToDelete) {
+
     }
 }
