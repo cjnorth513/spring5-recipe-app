@@ -5,6 +5,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -16,9 +18,15 @@ import java.util.Set;
 @NoArgsConstructor
 public class RecipeCommand {
     private Long id;
+
+    @NotBlank
+    @Size(min = 3, max = 250)
     private String description;
+
     private Integer prepTime;
+
     private Integer cookTime;
+
     private Integer servings;
     private String source;
     private String url;
